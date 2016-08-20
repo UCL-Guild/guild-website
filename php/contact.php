@@ -23,7 +23,7 @@ if (filter_var($_REQUEST['contact_email'], FILTER_VALIDATE_EMAIL)):
   $message .= 'Message: '. $_REQUEST['message'];
 
   // Send contact information
-  mail = mail( $to, $subject , $message, $header );
+  $mail = mail( $to, $subject , $message, $header );
 
   echo 'sent';
   else:
