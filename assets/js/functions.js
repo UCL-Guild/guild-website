@@ -6,12 +6,16 @@ var  aboutImage = jQuery('#about').data('background-image');
 var  subscribeImage = jQuery('#subscribe').data('background-image');
 var  contactImage = jQuery('#contact').data('background-image');
 var  teamImage = jQuery('#team').data('background-image');
+var  eventsImage = jQuery('#events').data('background-image');
+var  sponsorsImage = jQuery('#sponsors').data('background-image');
 
 if (pageTopImage) {  jQuery('#page-top').css({ 'background-image':'url(' + pageTopImage + ')' }); };
 if (aboutImage) {  jQuery('#about').css({ 'background-image':'url(' + aboutImage + ')' }); };
 if (subscribeImage) {  jQuery('#subscribe').css({ 'background-image':'url(' + subscribeImage + ')' }); };
 if (contactImage) {  jQuery('#contact').css({ 'background-image':'url(' + contactImage + ')' }); };
 if (teamImage) {  jQuery('#team').css({ 'background-image':'url(' + teamImage + ')' }); };
+if (eventsImage) {  jQuery('#events').css({ 'background-image':'url(' + eventsImage + ')' }); };
+if (sponsorsImage) {  jQuery('#sponsors').css({ 'background-image':'url(' + sponsorsImage + ')' }); };
 
 /* Background Images End
 -------------------------------------------------------------------*/
@@ -98,6 +102,9 @@ jQuery(document).ready(function($) {
     });
 		$('.next-section .go-to-events').click(function() {
       $('html,body').animate({scrollTop:$('#events').offset().top}, 1000);
+    });
+		$('.next-section .go-to-sponsors').click(function() {
+      $('html,body').animate({scrollTop:$('#sponsors').offset().top}, 1000);
     });
   	$('.next-section .go-to-page-top').click(function() {
     	$('html,body').animate({scrollTop:$('#page-top').offset().top}, 1000);
