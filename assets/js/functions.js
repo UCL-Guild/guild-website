@@ -6,12 +6,16 @@ var  aboutImage = jQuery('#about').data('background-image');
 var  subscribeImage = jQuery('#subscribe').data('background-image');
 var  contactImage = jQuery('#contact').data('background-image');
 var  teamImage = jQuery('#team').data('background-image');
+var  eventsImage = jQuery('#events').data('background-image');
+var  sponsorsImage = jQuery('#sponsors').data('background-image');
 
 if (pageTopImage) {  jQuery('#page-top').css({ 'background-image':'url(' + pageTopImage + ')' }); };
 if (aboutImage) {  jQuery('#about').css({ 'background-image':'url(' + aboutImage + ')' }); };
 if (subscribeImage) {  jQuery('#subscribe').css({ 'background-image':'url(' + subscribeImage + ')' }); };
 if (contactImage) {  jQuery('#contact').css({ 'background-image':'url(' + contactImage + ')' }); };
 if (teamImage) {  jQuery('#team').css({ 'background-image':'url(' + teamImage + ')' }); };
+if (eventsImage) {  jQuery('#events').css({ 'background-image':'url(' + eventsImage + ')' }); };
+if (sponsorsImage) {  jQuery('#sponsors').css({ 'background-image':'url(' + sponsorsImage + ')' }); };
 
 /* Background Images End
 -------------------------------------------------------------------*/
@@ -35,8 +39,8 @@ jQuery(document).ready(function($) {
     -------------------------------------------------------------------*/
 
 
-    
-	/* Main Menu   
+
+	/* Main Menu
 	-------------------------------------------------------------------*/
 	$('#main-menu #headernavigation').onePageNav({
 		currentClass: 'active',
@@ -46,18 +50,18 @@ jQuery(document).ready(function($) {
 		scrollOffset: 0,
 		filter: '',
 		easing: 'swing'
-	});  
+	});
 
-	/* Main Menu End  
+	/* Main Menu End
 	-------------------------------------------------------------------*/
 
 
 
 
-	/* Time Countdown 
+	/* Time Countdown
 	-------------------------------------------------------------------*/
 	$('#time_countdown').countDown({
-        
+
         targetDate: {
             'day': 1,
             'month': 10,
@@ -82,9 +86,9 @@ jQuery(document).ready(function($) {
 
 
 
-	/* Next Section   
+	/* Next Section
 	-------------------------------------------------------------------*/
-	$('.next-section .go-to-about').click(function() {
+		$('.next-section .go-to-about').click(function() {
     	$('html,body').animate({scrollTop:$('#about').offset().top}, 1000);
   	});
   	$('.next-section .go-to-subscribe').click(function() {
@@ -95,6 +99,12 @@ jQuery(document).ready(function($) {
   	});
     $('.next-section .go-to-team').click(function() {
       $('html,body').animate({scrollTop:$('#team').offset().top}, 1000);
+    });
+		$('.next-section .go-to-events').click(function() {
+      $('html,body').animate({scrollTop:$('#events').offset().top}, 1000);
+    });
+		$('.next-section .go-to-sponsors').click(function() {
+      $('html,body').animate({scrollTop:$('#sponsors').offset().top}, 1000);
     });
   	$('.next-section .go-to-page-top').click(function() {
     	$('html,body').animate({scrollTop:$('#page-top').offset().top}, 1000);
@@ -110,17 +120,17 @@ jQuery(document).ready(function($) {
   -------------------------------------------------------------------*/
     $(".news-letter").ajaxChimp({
         callback: mailchimpResponse,
-        url: "http://jeweltheme.us10.list-manage.com/subscribe/post?u=a3e1b6603a9caac983abe3892&amp;id=257cf1a459" // Replace your mailchimp post url inside double quote "".  
+        url: "http://jeweltheme.us10.list-manage.com/subscribe/post?u=a3e1b6603a9caac983abe3892&amp;id=257cf1a459" // Replace your mailchimp post url inside double quote "".
     });
 
     function mailchimpResponse(resp) {
          if(resp.result === 'success') {
-         
+
             $('.alert-success').html(resp.msg).fadeIn().delay(3000).fadeOut();
-            
+
         } else if(resp.result === 'error') {
             $('.alert-warning').html(resp.msg).fadeIn().delay(3000).fadeOut();
-        }  
+        }
     };
 
 
@@ -129,13 +139,79 @@ jQuery(document).ready(function($) {
 	/* Subscribe End
 	-------------------------------------------------------------------*/
 
+	/* Team
+	-------------------------------------------------------------------*/
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
 
 
+
+
+	/* Team End
+	-------------------------------------------------------------------*/
+
+	/* Sponsors
+	-------------------------------------------------------------------*/
+	$('ul.sponsors-tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		if ($('.sponsors-tab-content').is(':visible')){
+				$('.sponsors-tab-content').slideUp();
+		}
+
+		if ($('.sponsors-details-tab').is(':visible')){
+			$('.sponsors-details-tab').slideUp('slow');
+		}
+
+		if ($('.sponsors-details-tab-content').is(':visible')){
+			$('ul.sponsors-details-tab li').removeClass('active');
+			$('.sponsors-details-tab-content').slideUp();
+		}
+
+		$('ul.sponsors-tabs li').removeClass('current');
+		$('.sponsors-tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).slideToggle();
+	});
+
+	$('.sponsors-details-btn').click(function(){
+	  $('.sponsors-details-tab').slideToggle();
+		if ($('.sponsors-details-tab-content').is(':visible')){
+			$('ul.sponsors-details-tab li').removeClass('active');
+			$('.sponsors-details-tab-content').slideUp();
+		}
+	});
+
+	$('ul.sponsors-details-tab li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.sponsors-details-tab li').removeClass('current');
+		$('.sponsors-details-tab-content').removeClass('current');
+
+		if ($('.sponsors-details-tab-content').is(':visible')){
+			$('ul.sponsors-details-tab li').removeClass('active');
+			$('.sponsors-details-tab-content').slideUp('fast');
+		}
+
+		$(this).addClass('current');
+		$("#"+tab_id).slideToggle('fast');
+	});
+
+	/* Sponsors End
+	-------------------------------------------------------------------*/
 
 	/* Contact
 	-------------------------------------------------------------------*/
     // Email from Validation
-  $('#contact-submit').click(function(e){ 
+  $('#contact-submit').click(function(e){
 
     //Stop form submission & check the validation
     e.preventDefault();
@@ -147,37 +223,37 @@ jQuery(document).ready(function($) {
     var error = false;
     var k_first_name = $('#first_name').val();
     var k_last_name = $('#last_name').val();
-    var k_email = $('#contact_email').val(); 
-    var k_subject = $('#subject').val(); 
+    var k_email = $('#contact_email').val();
+    var k_subject = $('#subject').val();
     var k_message = $('#message').val();
 
     // Form field validation
     if(k_first_name.length == 0){
-      var error = true; 
+      var error = true;
       $('.first-name-error').html('<i class="fa fa-exclamation"></i> First name is required.').fadeIn();
-    }  
+    }
 
     if(k_last_name.length == 0){
       var error = true;
       $('.last-name-error').html('<i class="fa fa-exclamation"></i> Last name is required.').fadeIn();
-    }  
+    }
 
     if(k_email.length != 0 && validateEmail(k_email)){
-       
+
     } else {
-      var error = true; 
+      var error = true;
       $('.contact-email-error').html('<i class="fa fa-exclamation"></i> Please enter a valid email address.').fadeIn();
     }
 
     if(k_subject.length == 0){
       var error = true;
      $('.contact-subject-error').html('<i class="fa fa-exclamation"></i> Subject is required.').fadeIn();
-    } 
+    }
 
     if(k_message.length == 0){
       var error = true;
       $('.contact-message-error').html('<i class="fa fa-exclamation"></i> Please provide a message.').fadeIn();
-    }  
+    }
 
     // If there is no validation error, next to process the mail function
     if(error == false){
@@ -199,24 +275,24 @@ jQuery(document).ready(function($) {
 
           //If the email is sent successfully, remove the submit button
           $('#first_name').remove();
-          $('#last_name').remove(); 
+          $('#last_name').remove();
           $('#contact_email').remove();
-          $('#subject').remove(); 
+          $('#subject').remove();
           $('#message').remove();
-          $('#contact-submit').remove(); 
+          $('#contact-submit').remove();
 
           $('.contact-box-hide').slideUp();
           $('.contact-message').html('<i class="fa fa-check contact-success"></i><div>Your message has been sent.</div>').fadeIn();
         } else {
           $('.btn-contact-container').hide();
           $('.contact-message').html('<i class="fa fa-exclamation contact-error"></i><div>Something went wrong, please try again later.</div>').fadeIn();
-            
+
         }
       });
     }
-  });  
- 
-         
+  });
+
+
   function validateEmail(sEmail) {
     var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     if (filter.test(sEmail)) {
@@ -224,16 +300,16 @@ jQuery(document).ready(function($) {
     } else {
       return false;
     }
-  } 
- 
+  }
+
 
 	/* Contact End
 	-------------------------------------------------------------------*/
 
 
-    
 
-    
+
+
 
 
 
@@ -243,13 +319,12 @@ jQuery(document).ready(function($) {
 -------------------------------------------------------------------*/
 
 
-/* Preloder 
+/* Preloder
 -------------------------------------------------------------------*/
-$(window).load(function () {    
+$(window).load(function () {
     "use strict";
     $("#loader").fadeOut();
     $("#preloader").delay(350).fadeOut("slow");
 });
  /* Preloder End
 -------------------------------------------------------------------*/
-   

@@ -22,17 +22,19 @@ Tags: HTML, Template, Coming Soon, Kite
 *    2.2 - Social Button
 *    2.3 - Placeholder color
 *    2.4 - Height Resize
-*  3 - Main Menu 
-*  4 - Page Top Section   
+*  3 - Main Menu
+*  4 - Page Top Section
 *  5 - About Us Section
 *  6 - Subscribe Section
-*  7 - Contact Section
-*  8 - Footer Section  
-*  9 - Media Query 
-*    9.1 - media screen and (max-width: 992px)
-*    9.2 - media screen and (max-width: 768px)
-*    9.3 - media screen and (max-width: 1170px) 
-*  10 - Preloader
+*  7 - Events Section
+*	 8 - Sponsors Section
+*  9 - Contact Section
+*  10 - Footer Section
+*  11 - Media Query
+*    11.1 - media screen and (max-width: 992px)
+*    11.2 - media screen and (max-width: 768px)
+*    11.3 - media screen and (max-width: 1170px)
+*  12 - Preloader
 *
 ---------------------------------------------------------------------- */
 
@@ -43,7 +45,7 @@ Tags: HTML, Template, Coming Soon, Kite
 ---------------------------------------------------------------------- */
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700);
-/* 1 - Import Google Font End 
+/* 1 - Import Google Font End
 ---------------------------------------------------------------------- */
 
 
@@ -56,10 +58,12 @@ body{
 	color:#fff;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
+	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=21431),auto;
 }
 
 a{
 	color: #3498db;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 }
 a:focus{
 	outline:none;
@@ -84,7 +88,7 @@ a:focus{
 	font-weight:700;
 	text-align:center;
 	text-transform:uppercase;
-	margin:0;
+	margin: 40;
 }
 .section-name span{
 	display:inline-block;
@@ -108,9 +112,29 @@ a:focus{
 }
 .section-title{
 	text-align:center;
+	font-weight:500;
 	text-transform:uppercase;
-	font-weight:300;
-	font-size:80px;
+	font-size:400%;
+	margin-bottom: 20px;
+}
+
+.section-year{
+	text-align: center;
+	text-align: center;
+	font-weight: 200;
+	font-size: 40px;
+	margin-bottom: 20px;
+}
+.section-year span{
+	border: 1px solid #fff;
+	padding: 0px 10px;
+}
+
+#tagline{
+	font-weight: bold;
+	text-align: center;
+	line-height: 30px;
+	font-size: 110%;
 }
 .section-description{
 	font-weight:300;
@@ -137,7 +161,7 @@ a:focus{
 	        transition:all .25s;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
- 	outline: none; 
+ 	outline: none;
  	color: #ffffff;
 }
 .form-control,
@@ -158,11 +182,11 @@ a:focus{
 	text-align:center;
 }
 .next-section a{
-	cursor:pointer;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 	display:inline-block;
 	width:120px;
 	height:120px;
-	
+
 	-webkit-border-radius:100%;
 	   -moz-border-radius:100%;
 	    -ms-border-radius:100%;
@@ -186,7 +210,7 @@ a:focus{
 	position:absolute;
 	top:20px;
 	left:35px;
-	
+
 	-webkit-transform:rotate(45deg);
 	   -moz-transform:rotate(45deg);
 	    -ms-transform:rotate(45deg);
@@ -209,7 +233,30 @@ a:focus{
 
 .society-container{
 	text-align:center;
-	margin:50px auto 0 auto;
+}
+
+.society-container a.society-logo{
+	display: inline-block;
+	border-radius: 50%;
+	background: black;
+	padding: 0;
+}
+
+.society-container a.society-logo img{
+    display: block;
+    -webkit-transition: all 0.05s;
+       -moz-transition: all 0.05s;
+        -ms-transition: all 0.05s;
+         -o-transition: all 0.05s;
+            transition: all 0.05s;
+}
+
+.society-container a.society-logo:hover img {
+    opacity: 0.7;
+}
+
+.society-container img:hover{
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 }
 
 /* 2.2 - Social Button
@@ -260,7 +307,7 @@ a:focus{
 }
 .social-btn-box,
 .social-btn-box a{
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -298,6 +345,10 @@ a:focus{
 	background:#3498db;
 	color: #fff;
 }
+
+.social-btn-box a:hover{
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+}
 /* 2.2 - Social Button
 ------------------------------------------ */
 
@@ -308,18 +359,18 @@ a:focus{
    color: #ffffff;
 }
 
-.form-control:-moz-placeholder { 
-   color: #ffffff;  
+.form-control:-moz-placeholder {
+   color: #ffffff;
 }
 
-.form-control::-moz-placeholder { 
-   color: #ffffff;  
+.form-control::-moz-placeholder {
+   color: #ffffff;
 }
 
 .form-control:-ms-input-placeholder{
 	color:#ffffff;
 }
-/* 2.3 - Placeholder color End 
+/* 2.3 - Placeholder color End
 ------------------------------------------ */
 
 
@@ -335,11 +386,11 @@ a:focus{
 .height-resize .team-container .col-sm-4{
 	padding-top:20px !important;
 }
-/* 2.4 - Height Resize End 
+/* 2.4 - Height Resize End
 ------------------------------------------ */
 
 
-/* 2 - Global Style End 
+/* 2 - Global Style End
 ---------------------------------------------------------------------- */
 
 
@@ -347,12 +398,13 @@ a:focus{
 
 /* 3 - Main Menu
 ---------------------------------------------------------------------- */
-.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a,
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus{
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 	color:#fff;
 	background-color:transparent;
 }
@@ -361,15 +413,16 @@ a:focus{
 	border-color:transparent;
 }
 .navbar-default .navbar-nav>.active>a:after{
-	content:"\2192";
+	content:"\00BB";
 	display:inline-block;
 	font-style:normal;
 	font-weight:normal;
+	color: #00cc95;
 	line-height:1;
 	margin-left:10px;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -380,7 +433,7 @@ a:focus{
 	padding:5px 15px;
 	font-weight:400;
 	font-style:italic;
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -390,11 +443,10 @@ a:focus{
 .navbar-nav>li>a:hover{
 	padding-left:25px;
 }
-.navbar-default .navbar-collapse, 
+.navbar-default .navbar-collapse,
 .navbar-default .navbar-form{
 	border-color: transparent;
 }
-
 
 @media (max-width: 992px) {
     .navbar-header {
@@ -419,7 +471,7 @@ a:focus{
     }
     .navbar-nav {
         float: none!important;
-		margin-top: 7.5px;
+				margin-top: 7.5px;
 	}
 	.navbar-nav>li {
         float: none;
@@ -437,7 +489,7 @@ a:focus{
 	#headernavigation{
 		background:rgba(0,0,0,.5);
 	}
-	.navbar-default .navbar-toggle:hover, 
+	.navbar-default .navbar-toggle:hover,
 	.navbar-default .navbar-toggle:focus{
 		background-color:transparent;
 	}
@@ -457,13 +509,13 @@ a:focus{
 		float:none !important;
 	}
 }
-/* 3 - Main Menu End 
+/* 3 - Main Menu End
 ---------------------------------------------------------------------- */
 
 
 
 
-/* 4 - Page Top Section 
+/* 4 - Page Top Section
 ---------------------------------------------------------------------- */
 .site-title{
 	text-align:center;
@@ -494,7 +546,6 @@ a:focus{
 	content:none;
 }
 .time-count-container{
-	min-height:300px;
 	margin-top:50px;
 }
 .time-box{
@@ -509,7 +560,7 @@ a:focus{
 	    -ms-border-radius:15px;
 	     -o-border-radius:15px;
 	        border-radius:15px;
-	
+
 	-webkit-transform:rotate(45deg);
 	   -moz-transform:rotate(45deg);
 	    -ms-transform:rotate(45deg);
@@ -534,8 +585,8 @@ a:focus{
 	display:inline-block;
 	font-weight:300;
 	padding-top: 15%;
-	
-	
+
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -544,7 +595,7 @@ a:focus{
 }
 .time-number .digit{
 	line-height: 60px;
-	display: inline-block;	
+	display: inline-block;
 	overflow: hidden;
 }
 
@@ -566,15 +617,28 @@ a:focus{
 	text-transform:uppercase;
 	padding:0px 25px;
 }
-/* 4 - Page Top Section End 
+
+.time-until a:hover{
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+}
+/* 4 - Page Top Section End
 ---------------------------------------------------------------------- */
 
 
 
 /* 5 - About Us Section
 ---------------------------------------------------------------------- */
+#mathieu{
+	padding-top: 30px;
+	margin-left: 120px;
+}
+#samsch{
+	padding-top: 30px;
+	margin-left: 40px;
+}
+
 .team-container .col-sm-4{
-	padding:60px 15px 0 15px;
+	padding:40px 15px 10px 15px;
 }
 .team-container .team-member{
 	max-width:245px;
@@ -582,7 +646,6 @@ a:focus{
 	position:relative;
 	overflow:hidden;
 }
-
 
 .team-container figcaption{
 	text-align:center;
@@ -601,7 +664,7 @@ a:focus{
 .team-container .member-name {
 	font-size: 1.5em;
 	font-weight: 700;
-	margin: 0;
+	margin: auto;
 	padding: 26px 10px 5px 10px;
 }
 .team-container figcaption p{
@@ -613,6 +676,60 @@ a:focus{
 	text-align:center;
 	width:100%;
 }
+/* ---- TESTING SECTION ---- */
+/* entire container, keeps perspective */
+.flip-container, .team-front, .team-back{
+	width:264px;
+	height: 300px;
+	outline: #ff0000 dotted thick;
+	margin:auto;
+	position:relative;
+	overflow:hidden;
+	background-color: #000000;
+	perspective: 1000px;
+}
+.name-member{
+	padding-top: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 130%;
+}
+.team-front p{
+	text-align: center;
+}
+	/* flip the pane when hovered */
+.flip-container:hover .team-flipper, .flip-container.hover .team-flipper {
+		transform: rotateY(-180deg);
+	}
+
+/* flip speed goes here */
+.team-flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.team-front, .team-back {
+	background: #008000;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.team-front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.team-back {
+	transform: rotateY(180deg);
+}
+/* ---- TESTING SECTION ---- */
 
 .team-member .social-btn-container,
 .team-member .social-btn-container .social-btn-box{
@@ -687,7 +804,7 @@ a:focus{
 .team-container .team-member figcaption,
 .team-container .team-member img,
 .team-container .team-member .social-buttons{
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -706,7 +823,40 @@ a:focus{
 .team-container .team-member:hover .social-buttons{
 	top:90px;
 }
-/* 5 - About Us Section End 
+
+ul.tabs{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.tabs li{
+	font-size: 130%;
+	background: #3d3d3d;
+	color: #fff;
+	display: inline-block;
+	padding: 10px 15px;
+	vertical-align: bottom;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+}
+
+ul.tabs li.current{
+	background: #00cc95;
+	color: #fff;
+}
+
+.tab-content{
+	display: none;
+	background: none;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+
+/* 5 - About Us Section End
 ---------------------------------------------------------------------- */
 
 
@@ -742,7 +892,7 @@ form.news-letter .btn:hover{
 #subscribe-loading {
 	display: none;
 	line-height: 45px;
-	cursor: inherit;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 }
 #subscribe-loading:hover{
 	color: inherit;
@@ -773,13 +923,153 @@ form.news-letter .btn:hover{
 	left: 25px;
 	bottom: -24px;
 }
-/* 6 - Subscribe Section End 
+/* 6 - Subscribe Section End
 ---------------------------------------------------------------------- */
 
 
+/* 7 - Events Section
+---------------------------------------------------------------------- */
 
+/* 7 - Events Section End
+---------------------------------------------------------------------- */
 
-/* 7 - Contact Section
+/* 8 - Sponsors Section
+---------------------------------------------------------------------- */
+.sponsors-container .plat-sponsors{
+	background: rgba(34, 34, 34, 0.7);
+}
+
+.sponsors-container .gold-sponsors{
+	background: rgba(188, 155, 49, 0.7);
+}
+
+.sponsors-container .silver-sponsors{
+	background: rgba(192, 192, 192, 0.8);
+}
+
+.sponsors-container .bronze-sponsors{
+	background: rgba(140, 78, 16, 0.7);
+}
+
+.sponsors-container .partners{
+	background: rgba(0, 204, 149, 0.6);
+}
+
+.sponsors-container .plat-sponsors,.sponsors-container .gold-sponsors,.sponsors-container .silver-sponsors,
+.sponsors-container .bronze-sponsors,.sponsors-container .partners{
+	padding: 5px 0;
+	margin: 30px 0;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.85em;
+	text-indent: 300px;
+}
+
+.silver-details div{
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.silver-details div.sponsors-details-tab-content{
+	margin-left: 250px;
+	margin-right: 250px;
+}
+
+.sponsors-tab-content{
+	margin: 20px 400px;
+	font-size: 1em;
+	font-weight: 200;
+}
+
+.sponsors-tab-content span.sponsors-details-name{
+	font-weight:900;
+	font-size: 1.3em;
+	text-decoration: underline;
+}
+
+.sponsors-tab-content span.sponsors-details-heading{
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+ul.sponsors-tabs{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.sponsors-tabs li{
+	background: transparent;
+	overflow: hidden;
+	color: #fff;
+	display:inline-table;
+	padding: 10px 15px;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+}
+
+ul.sponsors-tabs li.current{
+	background: rgba(255,255,255,1.0);
+	color: #fff;
+}
+
+.sponsors-tab-content{
+	display: none;
+	background: none;
+	padding: 15px;
+}
+
+.sponsors-tab-content.current{
+	display: inherit;
+}
+
+.sponsors-tab-content span.sponsors-details-btn{
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	text-decoration: underline;
+}
+
+.sponsors-details-tab{
+	max-width: inherit;
+	display: none;
+}
+
+ul.sponsors-details-tab{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.sponsors-details-tab li{
+	display: none;
+	font-size: 100%;
+	background: #3d3d3d;
+	color: #fff;
+	display: inline-block;
+	padding: 10px 15px;
+	vertical-align: bottom;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+}
+
+ul.sponsors-details-tab li.current{
+	background: #000000;
+	color: #fff;
+}
+
+.sponsors-details-tab-content{
+	display: none;
+	background: none;
+	padding: 15px;
+}
+
+.sponsors-details-tab-content.current{
+	margin-left: 200px;
+	display: inherit;
+}
+
+/* 8 - Sponsors Section End
+---------------------------------------------------------------------- */
+
+/* 9 - Contact Section
 ---------------------------------------------------------------------- */
 #contact .next-section a{
 
@@ -789,7 +1079,7 @@ form.news-letter .btn:hover{
 	     -o-transform:rotate(180deg);
 	        transform:rotate(180deg);
 }
-#contact-form .col-sm-6, 
+#contact-form .col-sm-6,
 #contact-form .col-sm-10,
 #contact-form .col-sm-2{
 	padding:0;
@@ -862,7 +1152,7 @@ form.news-letter .btn:hover{
 }
 #contact-loading{
 	display: none;
-	cursor: inherit;
+	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 	line-height: 110px;
 }
 #contact-loading:hover{
@@ -873,13 +1163,13 @@ form.news-letter .btn:hover{
 	font-size: 1.125em;
 }
 
-/* 7 - Contact Section End 
+/* 9 - Contact Section End
 ---------------------------------------------------------------------- */
 
 
 
 
-/* 8 - Footer Section  
+/* 10 - Footer Section
 ---------------------------------------------------------------------- */
 #footer-section{
 	width: 100%;
@@ -887,7 +1177,7 @@ form.news-letter .btn:hover{
 }
 #footer-section p{
 	margin: 0;
-	padding: 25px 15px; 
+	padding: 25px 15px;
 	text-align: center;
 	line-height: 30px;
 	color: #1a1a1a;
@@ -895,17 +1185,17 @@ form.news-letter .btn:hover{
 #footer-section p a{
 	color: #3498db;
 }
-/* 8 - Footer Section End 
+/* 10 - Footer Section End
 ---------------------------------------------------------------------- */
 
 
 
 
 
-/* 9 - Media Query 
+/* 11 - Media Query
 ---------------------------------------------------------------------- */
 
-/* 9.1 - media screen and (max-width: 992px)
+/* 11.1 - media screen and (max-width: 992px)
 ------------------------------------------------ */
 @media screen and (max-width: 992px){
 	.container{
@@ -922,13 +1212,13 @@ form.news-letter .btn:hover{
 
 
 
-/* 9.1 - media screen and (max-width: 992px)  End
+/* 11.1 - media screen and (max-width: 992px)  End
 ------------------------------------------------ */
 
 
 
 
-/* 9.2 - media screen and (max-width: 768px)
+/* 11.2 - media screen and (max-width: 768px)
 ------------------------------------------------ */
 
 
@@ -951,28 +1241,28 @@ form.news-letter .btn:hover{
 	}
 }
 
-/* 9.2 - media screen and (max-width: 768px) End
+/* 11.2 - media screen and (max-width: 768px) End
 ------------------------------------------------ */
 
 
-/* 9.3 - media screen and (max-width: 1170px)
+/* 11.3 - media screen and (max-width: 1170px)
 ------------------------------------------------ */
 @media (min-width: 1170px){
 	.container{
 		width:830px;
 	}
 }
-/* 9.3 - media screen and (max-width: 1170px) End
+/* 11.3 - media screen and (max-width: 1170px) End
 ------------------------------------------------ */
 
 
-/* 9 - Media Query End
+/* 11 - Media Query End
 ---------------------------------------------------------------------- */
 
 
 
 
-/* 10 - Preloader
+/* 12 - Preloader
 ---------------------------------------------------------------------- */
 #preloader{
 	position: fixed;
@@ -1181,6 +1471,5 @@ background: #00aaff;
 	}
 }
 
-/* 10 - Preloader End
+/* 12 - Preloader End
 ---------------------------------------------------------------------- */
-
