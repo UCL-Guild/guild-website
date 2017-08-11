@@ -141,8 +141,6 @@ jQuery(document).ready(function($) {
 
 	/* Team
 	-------------------------------------------------------------------*/
-	$(document).ready(function(){
-
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
 
@@ -153,10 +151,61 @@ jQuery(document).ready(function($) {
 		$("#"+tab_id).addClass('current');
 	})
 
-})
+
 
 
 	/* Team End
+	-------------------------------------------------------------------*/
+
+	/* Sponsors
+	-------------------------------------------------------------------*/
+	$('ul.sponsors-tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		if ($('.sponsors-tab-content').is(':visible')){
+				$('.sponsors-tab-content').slideUp();
+		}
+
+		if ($('.sponsors-details-tab').is(':visible')){
+			$('.sponsors-details-tab').slideUp('slow');
+		}
+
+		if ($('.sponsors-details-tab-content').is(':visible')){
+			$('ul.sponsors-details-tab li').removeClass('active');
+			$('.sponsors-details-tab-content').slideUp();
+		}
+
+		$('ul.sponsors-tabs li').removeClass('current');
+		$('.sponsors-tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).slideToggle();
+	});
+
+	$('.sponsors-details-btn').click(function(){
+	  $('.sponsors-details-tab').slideToggle();
+		if ($('.sponsors-details-tab-content').is(':visible')){
+			$('ul.sponsors-details-tab li').removeClass('active');
+			$('.sponsors-details-tab-content').slideUp();
+		}
+	});
+
+	$('ul.sponsors-details-tab li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.sponsors-details-tab li').removeClass('current');
+		$('.sponsors-details-tab-content').removeClass('current');
+
+		if ($('.sponsors-details-tab-content').is(':visible')){
+			$('ul.sponsors-details-tab li').removeClass('active');
+			$('.sponsors-details-tab-content').slideUp('fast');
+		}
+
+		$(this).addClass('current');
+		$("#"+tab_id).slideToggle('fast');
+	});
+
+	/* Sponsors End
 	-------------------------------------------------------------------*/
 
 	/* Contact
