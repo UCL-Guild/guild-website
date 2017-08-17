@@ -58,12 +58,10 @@ body{
 	color:#fff;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	cursor: url(http://www.rw-designer.com/cursor-extern.php?id=21431),auto;
 }
 
 a{
 	color: #3498db;
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
 }
 a:focus{
 	outline:none;
@@ -182,7 +180,7 @@ a:focus{
 	text-align:center;
 }
 .next-section a{
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 	display:inline-block;
 	width:120px;
 	height:120px;
@@ -256,7 +254,7 @@ a:focus{
 }
 
 .society-container img:hover{
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 
 /* 2.2 - Social Button
@@ -347,7 +345,7 @@ a:focus{
 }
 
 .social-btn-box a:hover{
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 /* 2.2 - Social Button
 ------------------------------------------ */
@@ -404,7 +402,7 @@ a:focus{
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus{
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 	color:#fff;
 	background-color:transparent;
 }
@@ -619,7 +617,7 @@ a:focus{
 }
 
 .time-until a:hover{
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 /* 4 - Page Top Section End
 ---------------------------------------------------------------------- */
@@ -838,7 +836,7 @@ ul.tabs li{
 	display: inline-block;
 	padding: 10px 15px;
 	vertical-align: bottom;
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 
 ul.tabs li.current{
@@ -892,7 +890,7 @@ form.news-letter .btn:hover{
 #subscribe-loading {
 	display: none;
 	line-height: 45px;
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 #subscribe-loading:hover{
 	color: inherit;
@@ -1004,7 +1002,7 @@ ul.sponsors-tabs li{
 	color: #fff;
 	display:inline-table;
 	padding: 10px 15px;
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 
 ul.sponsors-tabs li.current{
@@ -1023,7 +1021,7 @@ ul.sponsors-tabs li.current{
 }
 
 .sponsors-tab-content span.sponsors-details-btn{
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 	text-decoration: underline;
 }
 
@@ -1047,7 +1045,7 @@ ul.sponsors-details-tab li{
 	display: inline-block;
 	padding: 10px 15px;
 	vertical-align: bottom;
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 }
 
 ul.sponsors-details-tab li.current{
@@ -1152,7 +1150,7 @@ ul.sponsors-details-tab li.current{
 }
 #contact-loading{
 	display: none;
-	cursor: url(http://cur.cursors-4u.net/games/gam-4/gam379.cur),auto;
+	cursor: pointer;
 	line-height: 110px;
 }
 #contact-loading:hover{
