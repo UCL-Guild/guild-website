@@ -2,7 +2,7 @@
 
 Official Guild Website est. 2016
 
-This website is specially made for UCL Guild 2016/2017 landing page
+This website is specially made for UCL Guild 2017/2018 landing page
 
 Recommended:
 
