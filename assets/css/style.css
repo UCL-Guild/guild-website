@@ -27,7 +27,7 @@ Tags: HTML, Template, Coming Soon, Kite
 *  5 - About Us Section
 *  6 - Subscribe Section
 *  7 - Events Section
-*	 8 - Sponsors Section
+*  8 - Sponsors Section
 *  9 - Contact Section
 *  10 - Footer Section
 *  11 - Media Query
@@ -949,12 +949,16 @@ form.news-letter .btn:hover{
 	background: rgba(140, 78, 16, 0.7);
 }
 
+.sponsors-container .employ-sponsors{
+	background: rgba(45, 106, 111, 0.6);
+}
+
 .sponsors-container .partners{
 	background: rgba(0, 204, 149, 0.6);
 }
 
 .sponsors-container .plat-sponsors,.sponsors-container .gold-sponsors,.sponsors-container .silver-sponsors,
-.sponsors-container .bronze-sponsors,.sponsors-container .partners{
+.sponsors-container .bronze-sponsors,.sponsors-container .partners, .sponsors-container .employ-sponsors{
 	padding: 5px 0;
 	margin: 30px 0;
 	font-weight: bold;
