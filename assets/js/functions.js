@@ -170,6 +170,10 @@ jQuery(document).ready(function($) {
 			$('.sponsors-details-tab').slideUp('slow');
 		}
 
+		if (!$('.sponsors-details-tab').is(':visible')){
+			$('.sponsors-details-tab').slideDown();
+		}
+		
 		if ($('.sponsors-details-tab-content').is(':visible')){
 			$('ul.sponsors-details-tab li').removeClass('active');
 			$('.sponsors-details-tab-content').slideUp();
